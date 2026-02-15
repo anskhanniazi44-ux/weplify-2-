@@ -49,10 +49,10 @@ const Contact: React.FC = () => {
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
                 <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
-                  <option>New Project Inquiry</option>
-                  <option>Site Optimization</option>
-                  <option>Maintenance Package</option>
-                  <option>Premium Offer Activation</option>
+                  <option>Elementor</option>
+                  <option>GeneratePress</option>
+                  <option>Hostinger Hosting</option>
+                  <option>Website Development</option>
                 </select>
               </div>
               <div>

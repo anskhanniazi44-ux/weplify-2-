@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-900 pt-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-900 pt-32 md:pt-48 pb-16">
       {/* Background decoration */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 -left-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
 
           {/* Right Side: Profile Image */}
           <div className="relative flex justify-center lg:justify-end animate-in fade-in zoom-in-95 duration-1000">
-            <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden group border-4 border-white/5">
+            <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden group border-4 border-white/5 shadow-2xl">
               <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
               <img
                 src="https://image2url.com/r2/default/images/1771154808022-bbfebd62-a280-4e91-ad90-401385bb855d.jpg"

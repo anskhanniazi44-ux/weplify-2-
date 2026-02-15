@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <img 
                 src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
                 alt="Weplify Logo" 
-                className="h-20 w-auto object-contain" 
+                className="h-40 w-auto object-contain" 
               />
             </div>
             <p className="text-slate-500 max-w-sm mb-6">

@@ -12,7 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     e.preventDefault();
     const element = document.getElementById(targetId.replace('#', ''));
     if (element) {
-      const offset = 80; // Navbar height offset
+      const offset = scrolled ? 80 : 120; // Dynamic offset based on header size
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-white shadow-md py-2 md:py-3' : 'bg-transparent py-4 md:py-8'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
@@ -44,7 +44,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <img 
                 src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
                 alt="Weplify Logo" 
-                className="h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+                // Responsive logo height: 
+                // Mobile: h-12 (scrolled) / h-16 (top)
+                // Desktop: h-20 (scrolled) / h-32 (top)
+                className={`w-auto object-contain transition-all duration-500 group-hover:scale-105 
+                  ${scrolled 
+                    ? 'h-12 md:h-20' 
+                    : 'h-16 md:h-32'
+                  }`} 
                 style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
               />
             </a>
@@ -57,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleScroll(e, link.href)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
                     scrolled ? 'text-slate-700 hover:text-indigo-600' : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -69,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 onClick={(e) => handleScroll(e, '#contact')}
                 className="bg-indigo-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-600/30"
               >
-                Hire Me
+                Start Your Project
               </a>
             </div>
           </div>
@@ -110,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               onClick={(e) => handleScroll(e, '#contact')}
               className="block w-full text-center bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg"
             >
-              Hire Me
+              Start Your Project
             </a>
           </div>
         </div>

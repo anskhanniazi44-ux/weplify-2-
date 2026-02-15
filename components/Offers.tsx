@@ -32,7 +32,7 @@ const offers: Offer[] = [
   },
   {
     id: 'astra',
-    title: 'Astra Agency Bundle',
+    title: 'Astra Premium',
     description: 'Beautiful pre-built templates for every niche. Fast, customizable, and Elementor ready.',
     icon: '🌟',
     color: 'bg-indigo-500',
