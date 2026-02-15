@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Offer } from '../types';
+import { Offer } from '../types.ts';
 
 const offers: Offer[] = [
   {

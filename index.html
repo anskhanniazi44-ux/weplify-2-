@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WP Developer Portfolio</title>
+    <title>Anas | Professional WordPress Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Anas, a WordPress Developer with 3+ years of experience specializing in Elementor, GeneratePress, and Astra.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -14,6 +15,11 @@
         }
         .bg-wp-blue { background-color: #21759b; }
         .text-wp-blue { color: #21759b; }
+        
+        /* Smooth scroll margin for anchors */
+        section {
+            scroll-margin-top: 80px;
+        }
     </style>
 <script type="importmap">
 {
@@ -28,5 +34,7 @@
 </head>
 <body class="bg-gray-50 text-slate-900">
     <div id="root"></div>
+    <!-- Entry point for the React application -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
