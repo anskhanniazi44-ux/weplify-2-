@@ -11,22 +11,14 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="https://image2url.com/r2/default/images/1771154912750-9df5a22f-625e-4871-9c6e-16ac583cd67c.png" 
+                src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
                 alt="Weplify Logo" 
-                className="h-10 w-auto object-contain" 
+                className="h-20 w-auto object-contain" 
               />
             </div>
             <p className="text-slate-500 max-w-sm mb-6">
               Expert WordPress development for modern businesses. Providing scalable solutions and premium digital products since 2021.
             </p>
-            <div className="flex gap-4">
-              {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
-                <a key={social} href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-600 transition-all">
-                  <span className="sr-only">{social}</span>
-                  <div className="w-5 h-5 bg-current opacity-50 rounded-sm"></div>
-                </a>
-              ))}
-            </div>
           </div>
           
           <div>

@@ -42,9 +42,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center gap-2 group">
               <img 
-                src="https://image2url.com/r2/default/images/1771154912750-9df5a22f-625e-4871-9c6e-16ac583cd67c.png" 
+                src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
                 alt="Weplify Logo" 
-                className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+                className="h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105" 
                 style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
               />
             </a>

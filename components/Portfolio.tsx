@@ -5,66 +5,45 @@ import { Project } from '../types';
 const projects: Project[] = [
   { 
     id: 1, 
-    title: 'The Daily Grind Cafe', 
-    category: 'Local Business', 
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://wordpress.org' 
+    title: 'Center for Yoga LA', 
+    category: 'Health & Wellness', 
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: 'https://centerforyogala.com/' 
   },
   { 
     id: 2, 
-    title: 'Sarah J. Portfolio', 
-    category: 'Personal', 
-    image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://elementor.com' 
+    title: 'Newport Beach Car Fest', 
+    category: 'Events & Automotive', 
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: 'https://newportbeachcarfest.org/' 
   },
   { 
     id: 3, 
-    title: 'Urban Kicks Store', 
+    title: 'Pillz Online Pharmacy', 
     category: 'E-commerce', 
-    image: 'https://images.unsplash.com/photo-1556742049-04ff4f6a0299?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://woocommerce.com' 
+    image: 'https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: 'https://pillzonline.com/' 
   },
   { 
     id: 4, 
-    title: 'Elite Legal Associates', 
-    category: 'Professional', 
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://generatepress.com' 
+    title: 'IBC Pakistan Business', 
+    category: 'Corporate', 
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: 'http://ibc.net.pk/' 
   },
   { 
     id: 5, 
-    title: 'Zen Yoga Studio', 
-    category: 'Health', 
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://wpastra.com' 
+    title: 'EasyGoLive Tech', 
+    category: 'Technology', 
+    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: 'https://easygolive.com/' 
   },
   { 
     id: 6, 
-    title: 'Pawfect Pet Grooming', 
+    title: 'The Daily Grind Cafe', 
     category: 'Local Business', 
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://hostinger.com' 
-  },
-  { 
-    id: 7, 
-    title: 'Fresh Harvest Market', 
-    category: 'Local Business', 
-    image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://wordpress.com' 
-  },
-  { 
-    id: 8, 
-    title: 'Bloom & Grow Florals', 
-    category: 'E-commerce', 
-    image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://example.com' 
-  },
-  { 
-    id: 9, 
-    title: 'Next Step Coaching', 
-    category: 'Professional', 
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://example.org' 
+    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800&h=600', 
+    link: '#' 
   },
 ];
 
@@ -81,10 +60,10 @@ const Portfolio: React.FC = () => {
     <section id="portfolio" className="py-20 md:py-24 bg-slate-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-indigo-400 font-semibold tracking-wide uppercase mb-2 text-sm md:text-base">Portfolio</h2>
-          <p className="text-3xl md:text-5xl font-bold mb-6">Real-World Projects</p>
+          <h2 className="text-indigo-400 font-semibold tracking-wide uppercase mb-2 text-sm md:text-base">Recent Work</h2>
+          <p className="text-3xl md:text-5xl font-bold mb-6">Featured Projects</p>
           <p className="max-w-2xl mx-auto text-slate-400 mb-10 text-sm md:text-base">
-            From local brick-and-mortar shops to niche personal brands, I help small businesses establish a powerful digital footprint.
+            Take a look at some of the diverse WordPress projects I've delivered recently, ranging from healthcare and automotive events to complex e-commerce platforms.
           </p>
           
           {/* Filter Bar */}
@@ -125,7 +104,7 @@ const Portfolio: React.FC = () => {
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/40 transition-all duration-500 flex items-center justify-center">
                 <span className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white text-indigo-600 px-6 py-2 rounded-full font-bold text-sm shadow-xl">
-                  View Project
+                  View Live Site
                 </span>
               </div>
 
