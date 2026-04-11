@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { getWhatsAppLink } from '../constants.ts';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -24,6 +25,12 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       });
       setIsOpen(false);
     }
+  };
+
+  const handleStartProject = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open(getWhatsAppLink("Hi Anas, I'm interested in starting a WordPress project with you."), '_blank');
+    setIsOpen(false);
   };
 
   const navLinks = [
@@ -72,8 +79,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 </a>
               ))}
               <a
-                href="#contact"
-                onClick={(e) => handleScroll(e, '#contact')}
+                href="#"
+                onClick={handleStartProject}
                 className="bg-indigo-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-600/30"
               >
                 Start Your Project
@@ -113,8 +120,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           ))}
           <div className="px-4 py-3">
             <a
-              href="#contact"
-              onClick={(e) => handleScroll(e, '#contact')}
+              href="#"
+              onClick={handleStartProject}
               className="block w-full text-center bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg"
             >
               Start Your Project

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Offer } from '../types.ts';
+import { getWhatsAppLink } from '../constants.ts';
 
 const offers: Offer[] = [
   {
@@ -42,17 +43,12 @@ const offers: Offer[] = [
 ];
 
 const Offers: React.FC = () => {
-  const handleScrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
+  const handleGetOffer = (title: string) => {
+    window.open(getWhatsAppLink(`Hi Anas, I'm interested in the ${title} offer.`), '_blank');
+  };
+
+  const handleGetQuote = () => {
+    window.open(getWhatsAppLink("Hi Anas, I'm interested in a custom bundle. Can I get a quote?"), '_blank');
   };
 
   return (
@@ -87,7 +83,7 @@ const Offers: React.FC = () => {
               </p>
               
               <button
-                onClick={handleScrollToContact}
+                onClick={() => handleGetOffer(offer.title)}
                 className="w-full py-3 px-4 bg-slate-900 text-white text-center rounded-xl font-semibold hover:bg-slate-800 transition-colors"
               >
                 Get This Product
@@ -102,7 +98,7 @@ const Offers: React.FC = () => {
             Get a professional setup featuring all these premium tools at a fraction of the cost. Let's build your dream site together.
           </p>
           <button 
-            onClick={handleScrollToContact}
+            onClick={handleGetQuote}
             className="inline-block bg-white text-indigo-600 px-8 py-3 rounded-xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg"
           >
             Get My Quote

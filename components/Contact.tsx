@@ -1,7 +1,30 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { getWhatsAppLink } from '../constants.ts';
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'Website Development',
+    details: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = `Hi Anas, my name is ${formData.name}. 
+Email: ${formData.email}
+Subject: ${formData.subject}
+Project Details: ${formData.details}`;
+    
+    window.open(getWhatsAppLink(message), '_blank');
+  };
+
   return (
     <section id="contact" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,20 +58,41 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2 bg-white p-8 md:p-16">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Your Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" placeholder="Anas" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                    placeholder="Anas" 
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" placeholder="anas@example.com" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                    placeholder="anas@example.com" 
+                  />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
-                <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
+                <select 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
+                >
                   <option>Elementor</option>
                   <option>GeneratePress</option>
                   <option>Hostinger Hosting</option>
@@ -57,10 +101,18 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" placeholder="Tell me about your requirements..."></textarea>
+                <textarea 
+                  name="details"
+                  required
+                  rows={4} 
+                  value={formData.details}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                  placeholder="Tell me about your requirements..."
+                ></textarea>
               </div>
-              <button className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20">
-                Send Message
+              <button type="submit" className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20">
+                Send Message via WhatsApp
               </button>
             </form>
           </div>

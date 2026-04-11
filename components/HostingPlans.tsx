@@ -1,18 +1,10 @@
 
 import React from 'react';
+import { getWhatsAppLink } from '../constants.ts';
 
 const HostingPlans: React.FC = () => {
-  const handleScrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-    }
+  const handleChoosePlan = (planName: string) => {
+    window.open(getWhatsAppLink(`Hi Anas, I'm interested in the ${planName} hosting plan.`), '_blank');
   };
 
   const plans = [
@@ -153,7 +145,7 @@ const HostingPlans: React.FC = () => {
               </ul>
 
               <button 
-                onClick={handleScrollToContact}
+                onClick={() => handleChoosePlan(plan.name)}
                 className={`w-full py-4 rounded-2xl font-bold transition-all text-center ${
                 plan.highlight 
                   ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30' 

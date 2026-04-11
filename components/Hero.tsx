@@ -1,10 +1,16 @@
 
 import React from 'react';
+import { getWhatsAppLink } from '../constants.ts';
 
 const Hero: React.FC = () => {
-  const handleScrollToContact = (e: React.MouseEvent) => {
+  const handleStartProject = (e: React.MouseEvent) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
+    window.open(getWhatsAppLink("Hi Anas, I'm interested in starting a WordPress project with you."), '_blank');
+  };
+
+  const handleScrollToPortfolio = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById('portfolio');
     if (element) {
       const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
@@ -43,14 +49,15 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contact"
-                onClick={handleScrollToContact}
+                href="#"
+                onClick={handleStartProject}
                 className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-indigo-500/20 text-center"
               >
                 Start Your Project
               </a>
               <a
                 href="#portfolio"
+                onClick={handleScrollToPortfolio}
                 className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/10 rounded-xl font-bold text-lg transition-all text-center"
               >
                 View Portfolio
