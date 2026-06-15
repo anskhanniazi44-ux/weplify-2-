@@ -10,10 +10,10 @@ const HostingPlans: React.FC = () => {
   const plans = [
     {
       name: "Premium",
-      price: "399",
+      price: "2,999",
       oldPrice: "1,999",
       discount: "80% OFF",
-      period: "/mo",
+      period: "/yr",
       bonus: "+2 mo. free",
       tagline: "Everything you need to get started",
       features: [
@@ -30,10 +30,10 @@ const HostingPlans: React.FC = () => {
     },
     {
       name: "Business",
-      price: "599",
+      price: "3,999",
       oldPrice: "2,499",
       discount: "76% OFF",
-      period: "/mo",
+      period: "/yr",
       bonus: "+2 mo. free",
       tagline: "More tools and power for growth",
       features: [
@@ -51,10 +51,10 @@ const HostingPlans: React.FC = () => {
     },
     {
       name: "Cloud Startup",
-      price: "1,899",
+      price: "17,000",
       oldPrice: "5,699",
       discount: "67% OFF",
-      period: "/mo",
+      period: "/yr",
       bonus: "+2 mo. free",
       tagline: "Handle complex business needs",
       features: [

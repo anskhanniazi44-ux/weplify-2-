@@ -22,7 +22,7 @@ Email: ${formData.email}
 Subject: ${formData.subject}
 Project Details: ${formData.details}`;
     
-    window.open(getWhatsAppLink(message), '_blank');
+    window.open(getWhatsAppLink(message), '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -112,7 +112,7 @@ Project Details: ${formData.details}`;
                 ></textarea>
               </div>
               <button type="submit" className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20">
-                Send Message via WhatsApp
+                Send Message
               </button>
             </form>
           </div>

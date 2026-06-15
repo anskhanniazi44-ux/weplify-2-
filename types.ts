@@ -26,3 +26,4 @@ export interface Service {
   // Use React.ReactNode and import React to fix "Cannot find namespace 'JSX'" error
   icon: React.ReactNode;
 }
+

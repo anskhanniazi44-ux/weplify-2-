@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { getWhatsAppLink } from '../constants.ts';
+import Logo from './Logo.tsx';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -48,18 +49,13 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center">
             <a href="#" className="flex items-center gap-2 group">
-              <img 
-                src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
-                alt="Weplify Logo" 
-                // Responsive logo height: 
-                // Mobile: h-12 (scrolled) / h-16 (top)
-                // Desktop: h-20 (scrolled) / h-32 (top)
-                className={`w-auto object-contain transition-all duration-500 group-hover:scale-105 
-                  ${scrolled 
-                    ? 'h-12 md:h-20' 
-                    : 'h-16 md:h-32'
-                  }`} 
-                style={{ filter: scrolled ? 'none' : 'brightness(0) invert(1)' }}
+              <Logo 
+                scrolled={scrolled}
+                className={`transition-all duration-500 group-hover:scale-105 ${
+                  scrolled 
+                    ? 'h-12 md:h-16' 
+                    : 'h-16 md:h-24'
+                }`}
               />
             </a>
           </div>

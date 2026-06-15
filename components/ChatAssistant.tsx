@@ -5,7 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 const ChatAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([
-    { role: 'ai', text: 'Hi! I\'m your Weplify assistant. How can I help you with your WordPress project today?' }
+    { role: 'ai', text: 'Hi! I\'m your AKN Services assistant. How can I help you with your WordPress project today?' }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -32,7 +32,7 @@ const ChatAssistant: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: userMessage,
         config: {
-          systemInstruction: `You are a helpful AI assistant for Anas's "Weplify" portfolio website. 
+          systemInstruction: `You are a helpful AI assistant for Anas's "AKN Services" portfolio website. 
           Anas is a professional WordPress Developer with 3 years of experience specializing in Elementor, GeneratePress, Astra, and Hostinger.
           Your goal is to answer questions about the developer's services and the digital products offered on the site.
           Keep responses concise, professional, and friendly. Always encourage the user to reach out via the contact form if they have specific project needs.`,
@@ -57,7 +57,7 @@ const ChatAssistant: React.FC = () => {
           <div className="bg-indigo-600 p-4 text-white flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-lg">🤖</div>
-              <span className="font-bold">Weplify AI</span>
+              <span className="font-bold">AKN Services AI</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1 rounded transition-colors">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>

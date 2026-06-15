@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { getWhatsAppLink } from '../constants.ts';
+import profileImage from '../1762786057486.jpg';
 
 const Hero: React.FC = () => {
   const handleStartProject = (e: React.MouseEvent) => {
@@ -70,9 +71,9 @@ const Hero: React.FC = () => {
             <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden group border-4 border-white/5 shadow-2xl">
               <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
               <img
-                src="https://image2url.com/r2/default/images/1771154808022-bbfebd62-a280-4e91-ad90-401385bb855d.jpg"
+                src={profileImage}
                 alt="Anas - WordPress Developer"
-                className="w-full h-full object-cover grayscale-[5%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
               />
             </div>
             {/* Floating Element - Modern Availability Badge */}

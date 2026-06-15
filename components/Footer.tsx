@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Logo from './Logo.tsx';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -10,11 +11,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src="https://image2url.com/r2/default/images/1771160459135-efa3355c-af5d-425a-96ad-12bd701f2360.png" 
-                alt="Weplify Logo" 
-                className="h-40 w-auto object-contain" 
-              />
+              <Logo className="h-24 md:h-28 w-auto" />
             </div>
             <p className="text-slate-500 max-w-sm mb-6">
               Expert WordPress development for modern businesses. Providing scalable solutions and premium digital products since 2021.
@@ -43,7 +40,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
-          <p>© {currentYear} Weplify. Built by Anas.</p>
+          <p>© {currentYear} AKN Services. Built by Anas.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-slate-600">Privacy Policy</a>
             <a href="#" className="hover:text-slate-600">Terms of Service</a>
