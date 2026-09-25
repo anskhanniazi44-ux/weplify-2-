@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
               Hi, I'm <span className="text-indigo-500">Anas</span> <br />
               <span className="text-slate-200">A Professional </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-                WordPress Developer
+                WordPress Developer and AI Automations Expert
               </span>
             </h1>
             <p className="max-w-xl text-base md:text-xl text-slate-300 mb-10 leading-relaxed">
