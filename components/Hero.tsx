@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { getWhatsAppLink } from '../constants.ts';
-import profileImage from '../1762786057486.jpg';
+import profileImage from '../src/assets/images/anas_headshot_1790330531144.jpg';
 
 const Hero: React.FC = () => {
   const handleStartProject = (e: React.MouseEvent) => {
@@ -72,7 +72,8 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
               <img
                 src={profileImage}
-                alt="Anas - WordPress Developer"
+                alt="Anas - WordPress Developer and AI Automations Expert"
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
               />
             </div>
