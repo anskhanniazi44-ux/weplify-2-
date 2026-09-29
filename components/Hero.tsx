@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { getWhatsAppLink } from '../constants.ts';
-import profileImage from '../src/assets/images/anas_headshot_1790330531144.jpg';
+import profileImage from '../src/assets/images/anas_profile_1790706348217.jpg';
 
 const Hero: React.FC = () => {
   const handleStartProject = (e: React.MouseEvent) => {
