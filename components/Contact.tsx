@@ -28,10 +28,10 @@ Project Details: ${formData.details}`;
   return (
     <section id="contact" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-indigo-600 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+        <div className="bg-sky-600 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
           <div className="lg:w-1/2 p-8 md:p-16 text-white flex flex-col justify-center">
             <h2 className="text-4xl font-extrabold mb-6 leading-tight">Ready to start your project?</h2>
-            <p className="text-xl text-indigo-100 mb-12 opacity-90">
+            <p className="text-xl text-sky-100 mb-12 opacity-90">
               Whether you need a full site build or specialized optimization, I'm here to help. Drop me a line and let's talk about your goals.
             </p>
             
@@ -41,7 +41,7 @@ Project Details: ${formData.details}`;
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <div>
-                  <div className="text-sm text-indigo-200">Email Me</div>
+                  <div className="text-sm text-sky-200">Email Me</div>
                   <div className="font-bold">anaskhanhosting@gmail.com</div>
                 </div>
               </div>
@@ -50,8 +50,8 @@ Project Details: ${formData.details}`;
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <div>
-                  <div className="text-sm text-indigo-200">Call/WhatsApp Me</div>
-                  <div className="font-bold">0334 6246562</div>
+                  <div className="text-sm text-sky-200">Call/WhatsApp Me</div>
+                  <div className="font-bold">+923446972446</div>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ Project Details: ${formData.details}`;
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
                     placeholder="Anas" 
                   />
                 </div>
@@ -80,7 +80,7 @@ Project Details: ${formData.details}`;
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
                     placeholder="anas@example.com" 
                   />
                 </div>
@@ -91,11 +91,11 @@ Project Details: ${formData.details}`;
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none"
                 >
                   <option>Elementor</option>
                   <option>GeneratePress</option>
-                  <option>Hostinger Hosting</option>
+                  <option>Speed Optimization</option>
                   <option>Website Development</option>
                 </select>
               </div>
@@ -107,11 +107,11 @@ Project Details: ${formData.details}`;
                   rows={4} 
                   value={formData.details}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
                   placeholder="Tell me about your requirements..."
                 ></textarea>
               </div>
-              <button type="submit" className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/20">
+              <button type="submit" className="w-full py-4 bg-sky-600 text-white rounded-xl font-bold text-lg hover:bg-sky-700 transition-all shadow-lg shadow-sky-500/20">
                 Send Message
               </button>
             </form>

@@ -1,6 +1,5 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI } from "@google/genai";
 
 const ChatAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,25 +21,30 @@ const ChatAssistant: React.FC = () => {
     if (!inputValue.trim() || isLoading) return;
 
     const userMessage = inputValue;
-    setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
+    const currentMessages = [...messages, { role: 'user' as const, text: userMessage }];
+    setMessages(currentMessages);
     setInputValue('');
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: userMessage,
-        config: {
-          systemInstruction: `You are a helpful AI assistant for Anas's "AKN Services" portfolio website. 
-          Anas is a professional WordPress Developer with 3 years of experience specializing in Elementor, GeneratePress, Astra, and Hostinger.
-          Your goal is to answer questions about the developer's services and the digital products offered on the site.
-          Keep responses concise, professional, and friendly. Always encourage the user to reach out via the contact form if they have specific project needs.`,
-        }
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: userMessage,
+          history: messages,
+        }),
       });
 
-      // Use response.text directly as per guidelines
-      const aiText = response.text || "I'm sorry, I couldn't process that request.";
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.error || `Server responded with ${res.status}`);
+      }
+
+      const data = await res.json();
+      const aiText = data.text || "I'm sorry, I couldn't process that request.";
       setMessages(prev => [...prev, { role: 'ai', text: aiText }]);
     } catch (error) {
       console.error("Chat error:", error);
@@ -54,7 +58,7 @@ const ChatAssistant: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-[100]">
       {isOpen ? (
         <div className="bg-white rounded-3xl shadow-2xl w-80 sm:w-96 flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-4 duration-300">
-          <div className="bg-indigo-600 p-4 text-white flex justify-between items-center">
+          <div className="bg-sky-600 p-4 text-white flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-lg">🤖</div>
               <span className="font-bold">AKN Services AI</span>
@@ -67,7 +71,7 @@ const ChatAssistant: React.FC = () => {
           <div ref={scrollRef} className="h-80 overflow-y-auto p-4 space-y-4 bg-slate-50">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl text-sm ${m.role === 'user' ? 'bg-indigo-600 text-white' : 'bg-white text-slate-700 shadow-sm border border-slate-100'}`}>
+                <div className={`max-w-[85%] p-3 rounded-2xl text-sm ${m.role === 'user' ? 'bg-sky-600 text-white' : 'bg-white text-slate-700 shadow-sm border border-slate-100'}`}>
                   {m.text}
                 </div>
               </div>
@@ -89,9 +93,9 @@ const ChatAssistant: React.FC = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ask Anas about WP..."
-              className="flex-grow bg-slate-100 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200"
+              className="flex-grow bg-slate-100 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-200"
             />
-            <button type="submit" className="bg-indigo-600 text-white p-2 rounded-xl hover:bg-indigo-700 transition-colors">
+            <button type="submit" className="bg-sky-600 text-white p-2 rounded-xl hover:bg-sky-700 transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </button>
           </form>
@@ -99,7 +103,7 @@ const ChatAssistant: React.FC = () => {
       ) : (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-indigo-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group"
+          className="bg-sky-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group hover:bg-sky-700"
         >
           <svg className="w-7 h-7 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />

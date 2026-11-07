@@ -21,20 +21,21 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-4 text-slate-500">
-              <li><a href="#about" className="hover:text-indigo-600">About</a></li>
-              <li><a href="#offers" className="hover:text-indigo-600">Premium Offers</a></li>
-              <li><a href="#services" className="hover:text-indigo-600">Services</a></li>
-              <li><a href="#portfolio" className="hover:text-indigo-600">Portfolio</a></li>
+              <li><a href="#" className="hover:text-sky-600">Home</a></li>
+              <li><a href="#about" className="hover:text-sky-600">About</a></li>
+              <li><a href="#services" className="hover:text-sky-600">Services</a></li>
+              <li><a href="#portfolio" className="hover:text-sky-600">Portfolio</a></li>
+              <li><a href="#contact" className="hover:text-sky-600">Contact</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Official Partners</h4>
             <ul className="space-y-4 text-slate-500">
-              <li><a href="#hosting" className="hover:text-indigo-600">Hostinger</a></li>
-              <li><a href="#offers" className="hover:text-indigo-600">Elementor</a></li>
-              <li><a href="#offers" className="hover:text-indigo-600">GeneratePress</a></li>
-              <li><a href="#offers" className="hover:text-indigo-600">Astra</a></li>
+              <li><a href="#contact" className="hover:text-sky-600">Hostinger</a></li>
+              <li><a href="#contact" className="hover:text-sky-600">Elementor</a></li>
+              <li><a href="#contact" className="hover:text-sky-600">GeneratePress</a></li>
+              <li><a href="#contact" className="hover:text-sky-600">Astra</a></li>
             </ul>
           </div>
         </div>

@@ -1,17 +1,6 @@
 
 import React from 'react';
 
-export interface Offer {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  color: string;
-  price?: string;
-  link: string;
-  badge?: string;
-}
-
 export interface Project {
   id: number;
   title: string;

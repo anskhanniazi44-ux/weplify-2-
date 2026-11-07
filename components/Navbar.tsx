@@ -12,6 +12,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
     e.preventDefault();
+    if (targetId === '#' || targetId === '' || targetId === '#home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      setIsOpen(false);
+      return;
+    }
     const element = document.getElementById(targetId.replace('#', ''));
     if (element) {
       const offset = scrolled ? 80 : 120; // Dynamic offset based on header size
@@ -35,9 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   };
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Offers', href: '#offers' },
-    { name: 'Hosting', href: '#hosting' },
+    { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
@@ -68,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                   href={link.href}
                   onClick={(e) => handleScroll(e, link.href)}
                   className={`px-3 py-2 rounded-md text-sm font-semibold transition-colors ${
-                    scrolled ? 'text-slate-700 hover:text-indigo-600' : 'text-white/90 hover:text-white'
+                    scrolled ? 'text-slate-700 hover:text-sky-600' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -77,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <a
                 href="#"
                 onClick={handleStartProject}
-                className="bg-indigo-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg hover:shadow-indigo-600/30"
+                className="bg-sky-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-sky-700 transition-all shadow-lg hover:shadow-sky-600/30"
               >
                 Start Your Project
               </a>
@@ -109,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScroll(e, link.href)}
-              className="block px-4 py-3 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg text-base font-semibold"
+              className="block px-4 py-3 text-slate-700 hover:bg-sky-50 hover:text-sky-600 rounded-lg text-base font-semibold"
             >
               {link.name}
             </a>
@@ -118,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             <a
               href="#"
               onClick={handleStartProject}
-              className="block w-full text-center bg-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg"
+              className="block w-full text-center bg-sky-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:bg-sky-700 transition-colors"
             >
               Start Your Project
             </a>

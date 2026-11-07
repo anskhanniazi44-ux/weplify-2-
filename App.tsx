@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
-import Offers from './components/Offers.tsx';
-import HostingPlans from './components/HostingPlans.tsx';
 import Services from './components/Services.tsx';
 import Portfolio from './components/Portfolio.tsx';
 import Contact from './components/Contact.tsx';
@@ -28,8 +26,6 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <About />
-        <Offers />
-        <HostingPlans />
         <Services />
         <Portfolio />
         <Contact />

@@ -14,7 +14,7 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <div className="absolute -top-4 -left-4 w-64 h-64 bg-indigo-50 rounded-full -z-10"></div>
+            <div className="absolute -top-4 -left-4 w-64 h-64 bg-sky-50 rounded-full -z-10"></div>
             <img
               src="https://picsum.photos/id/1/600/600"
               alt="Workspace"
@@ -36,7 +36,7 @@ const About: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="text-3xl font-bold text-indigo-600 mb-1">{stat.value}</div>
+                  <div className="text-3xl font-bold text-sky-600 mb-1">{stat.value}</div>
                   <div className="text-sm text-slate-500 font-medium">{stat.label}</div>
                 </div>
               ))}

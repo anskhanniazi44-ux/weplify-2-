@@ -26,8 +26,8 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-900 pt-32 md:pt-48 pb-16">
       {/* Background decoration */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 -left-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-0 -right-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute top-0 -left-20 w-72 h-72 bg-sky-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-0 -right-20 w-96 h-96 bg-sky-700 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
       </div>
 
@@ -35,13 +35,13 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side: Intro Text */}
           <div className="text-left animate-in slide-in-from-left-8 duration-700">
-            <span className="inline-block py-1 px-3 mb-6 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs md:text-sm font-semibold tracking-wider uppercase">
+            <span className="inline-block py-1 px-3 mb-6 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs md:text-sm font-semibold tracking-wider uppercase">
               3+ Years of Experience
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1]">
-              Hi, I'm <span className="text-indigo-500">Anas</span> <br />
+              Hi, I'm <span className="text-sky-400">Anas</span> <br />
               <span className="text-slate-200">A Professional </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">
                 WordPress Developer and AI Automations Expert
               </span>
             </h1>
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
               <a
                 href="#"
                 onClick={handleStartProject}
-                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-indigo-500/20 text-center"
+                className="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-xl font-bold text-lg transition-all shadow-xl shadow-sky-500/20 text-center"
               >
                 Start Your Project
               </a>
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
           {/* Right Side: Profile Image */}
           <div className="relative flex justify-center lg:justify-end animate-in fade-in zoom-in-95 duration-1000">
             <div className="relative w-full max-w-[500px] aspect-[4/5] rounded-[3rem] overflow-hidden group border-4 border-white/5 shadow-2xl">
-              <div className="absolute inset-0 bg-indigo-600/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
+              <div className="absolute inset-0 bg-sky-600/10 group-hover:bg-transparent transition-all duration-500 z-10"></div>
               <img
                 src={profileImage}
                 alt="Anas - WordPress Developer and AI Automations Expert"

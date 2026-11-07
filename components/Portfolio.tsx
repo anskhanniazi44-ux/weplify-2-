@@ -60,7 +60,7 @@ const Portfolio: React.FC = () => {
     <section id="portfolio" className="py-20 md:py-24 bg-slate-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-indigo-400 font-semibold tracking-wide uppercase mb-2 text-sm md:text-base">Recent Work</h2>
+          <h2 className="text-sky-400 font-semibold tracking-wide uppercase mb-2 text-sm md:text-base">Recent Work</h2>
           <p className="text-3xl md:text-5xl font-bold mb-6">Featured Projects</p>
           <p className="max-w-2xl mx-auto text-slate-400 mb-10 text-sm md:text-base">
             Take a look at some of the diverse WordPress projects I've delivered recently, ranging from healthcare and automotive events to complex e-commerce platforms.
@@ -74,7 +74,7 @@ const Portfolio: React.FC = () => {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300 ${
                   activeFilter === cat 
-                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30' 
+                    ? 'bg-sky-600 text-white shadow-lg shadow-sky-600/30' 
                     : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
                 }`}
               >
@@ -102,8 +102,8 @@ const Portfolio: React.FC = () => {
               </div>
               
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/40 transition-all duration-500 flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white text-indigo-600 px-6 py-2 rounded-full font-bold text-sm shadow-xl">
+              <div className="absolute inset-0 bg-sky-600/0 group-hover:bg-sky-600/40 transition-all duration-500 flex items-center justify-center">
+                <span className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white text-sky-600 px-6 py-2 rounded-full font-bold text-sm shadow-xl">
                   View Live Site
                 </span>
               </div>
@@ -113,10 +113,10 @@ const Portfolio: React.FC = () => {
               <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full pointer-events-none">
                 <div className="flex justify-between items-end">
                   <div>
-                    <span className="text-indigo-400 text-xs font-bold mb-1 block uppercase tracking-widest">{project.category}</span>
+                    <span className="text-sky-400 text-xs font-bold mb-1 block uppercase tracking-widest">{project.category}</span>
                     <h3 className="text-xl md:text-2xl font-bold leading-tight">{project.title}</h3>
                   </div>
-                  <div className="bg-white/10 p-2 rounded-full text-white/50 group-hover:text-white group-hover:bg-indigo-500 transition-all">
+                  <div className="bg-white/10 p-2 rounded-full text-white/50 group-hover:text-white group-hover:bg-sky-500 transition-all">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>

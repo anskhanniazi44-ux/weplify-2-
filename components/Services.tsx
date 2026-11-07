@@ -50,7 +50,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Professional Services</h2>
             <p className="text-slate-600">Comprehensive WordPress development services designed to help you succeed in the digital landscape.</p>
           </div>
-          <a href="#contact" className="text-indigo-600 font-bold hover:text-indigo-700 inline-flex items-center gap-2">
+          <a href="#contact" className="text-sky-600 font-bold hover:text-sky-700 inline-flex items-center gap-2">
             View all services
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </a>
@@ -58,8 +58,8 @@ const Services: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-indigo-200 transition-colors">
-              <div className="flex-shrink-0 text-indigo-600">
+            <div key={index} className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-sky-200 transition-colors">
+              <div className="flex-shrink-0 text-sky-600">
                 {service.icon}
               </div>
               <div>
