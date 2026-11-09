@@ -16,3 +16,24 @@ export interface Service {
   icon: React.ReactNode;
 }
 
+export interface OtherProject {
+  id: string | number;
+  title: string;
+  category: string;
+  description: string;
+  previewImage: string;
+  longScreenshotImage: string;
+}
+
+export interface SampleProject {
+  id: string | number;
+  title: string;
+  category: string;
+  description: string;
+  images: {
+    url: string;
+    caption: string;
+  }[];
+}
+
+
