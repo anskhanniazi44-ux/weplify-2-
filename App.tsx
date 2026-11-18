@@ -7,7 +7,6 @@ import Services from './components/Services.tsx';
 import Portfolio from './components/Portfolio.tsx';
 import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
-import ChatAssistant from './components/ChatAssistant.tsx';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,7 +30,6 @@ const App: React.FC = () => {
         <Contact />
       </main>
       <Footer />
-      <ChatAssistant />
     </div>
   );
 };

@@ -1,0 +1,83 @@
+<svg viewBox="55 75 390 390" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="40%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="shieldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+
+    <linearGradient id="swooshGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.15" />
+    </linearGradient>
+
+    <linearGradient id="swooshGradLeft" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.15" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer curved swooshes / wings -->
+  <g fill="none">
+    <path d="M 100 140 C 40 200 40 300 135 390" stroke="url(#swooshGradLeft)" stroke-width="3.5" />
+    <path d="M 85 150 C 60 220 75 320 150 410" stroke="url(#swooshGradLeft)" stroke-width="2" opacity="0.65" />
+    <path d="M 120 120 C 60 180 50 250 110 340" stroke="url(#swooshGradLeft)" stroke-width="3" opacity="0.8" />
+
+    <path d="M 400 140 C 460 200 460 300 365 390" stroke="url(#swooshGrad)" stroke-width="3.5" />
+    <path d="M 415 150 C 440 220 425 320 350 410" stroke="url(#swooshGrad)" stroke-width="2" opacity="0.65" />
+    <path d="M 380 120 C 440 180 450 250 390 340" stroke="url(#swooshGrad)" stroke-width="3" opacity="0.75" />
+  </g>
+
+  <!-- Accent semi-circles -->
+  <path d="M 105 180 C 70 200 110 240 125 220" fill="#0ea5e9" opacity="0.45" />
+  <path d="M 395 180 C 430 200 390 240 375 220" fill="#0ea5e9" opacity="0.45" />
+
+  <!-- Central Shield -->
+  <path
+    d="M 250 125 C 310 128, 360 155, 375 168 C 375 168, 381 210, 365 275 C 345 355, 250 395, 250 395 C 250 395, 155 355, 135 275 C 119 210, 125 168, 125 168 C 140 155, 190 128, 250 125 Z"
+    fill="url(#shieldFill)"
+    stroke="url(#shieldBorder)"
+    stroke-width="11"
+    stroke-linejoin="round"
+  />
+
+  <!-- Inner shield highlight line -->
+  <path
+    d="M 250 140 C 295 142, 345 168, 358 178 C 358 178, 363 210, 350 265 C 332 335, 250 375, 250 375 C 250 375, 168 335, 150 265 C 137 210, 142 178, 142 178 C 155 168, 205 142, 250 140 Z"
+    fill="none"
+    stroke="#0ea5e9"
+    stroke-width="2"
+    opacity="0.3"
+  />
+
+  <!-- Brand Text -->
+  <text
+    x="250"
+    y="256"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-weight="900"
+    font-size="82"
+    fill="#061f4d"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >AKN</text>
+
+  <line x1="165" y1="268" x2="335" y2="268" stroke="#000000" stroke-width="3.5" opacity="0.85" />
+
+  <text
+    x="253"
+    y="302"
+    font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+    font-weight="800"
+    font-size="24"
+    fill="#061f4d"
+    text-anchor="middle"
+    letter-spacing="5"
+  >SERVICES</text>
+</svg>
