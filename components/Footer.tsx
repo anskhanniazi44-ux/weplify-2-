@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               <Logo className="h-24 md:h-28 w-auto" />
             </div>
             <p className="text-slate-500 max-w-sm mb-6">
-              Expert WordPress development for modern businesses. Providing scalable solutions and premium digital products since 2021.
+              Expert WordPress development for modern businesses. Providing scalable solutions and premium digital products since 2023.
             </p>
           </div>
           
@@ -22,7 +22,6 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-slate-900 mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
             <ul className="space-y-4 text-slate-500">
               <li><a href="#" className="hover:text-sky-600">Home</a></li>
-              <li><a href="#about" className="hover:text-sky-600">About</a></li>
               <li><a href="#services" className="hover:text-sky-600">Services</a></li>
               <li><a href="#portfolio" className="hover:text-sky-600">Portfolio</a></li>
               <li><a href="#contact" className="hover:text-sky-600">Contact</a></li>
@@ -42,10 +41,6 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
           <p>© {currentYear} AKN Services. Built by Anas.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-slate-600">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-600">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

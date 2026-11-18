@@ -1,14 +1,6 @@
 
 import React from 'react';
 
-export interface Project {
-  id: number;
-  title: string;
-  category: string;
-  image: string;
-  link: string;
-}
-
 export interface Service {
   title: string;
   description: string;
@@ -21,8 +13,9 @@ export interface OtherProject {
   title: string;
   category: string;
   description: string;
-  previewImage: string;
-  longScreenshotImage: string;
+  image: string;
+  width: number;
+  height: number;
 }
 
 export interface SampleProject {

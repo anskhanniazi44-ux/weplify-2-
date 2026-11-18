@@ -1,85 +1,98 @@
 
 import React, { useState, useEffect } from 'react';
-import { Project, OtherProject, SampleProject } from '../types.ts';
+import { OtherProject, SampleProject } from '../types.ts';
 
-const projects: Project[] = [
-  { 
-    id: 1, 
-    title: 'Center for Yoga LA', 
-    category: 'Health & Wellness', 
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://centerforyogala.com/' 
-  },
-  { 
-    id: 2, 
-    title: 'Newport Beach Car Fest', 
-    category: 'Events & Automotive', 
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://newportbeachcarfest.org/' 
-  },
-  { 
-    id: 3, 
-    title: 'Pillz Online Pharmacy', 
-    category: 'E-commerce', 
-    image: 'https://images.unsplash.com/photo-1586015555751-63bb77f4322a?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://pillzonline.com/' 
-  },
-  { 
-    id: 4, 
-    title: 'IBC Pakistan Business', 
-    category: 'Corporate', 
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'http://ibc.net.pk/' 
-  },
-  { 
-    id: 5, 
-    title: 'EasyGoLive Tech', 
-    category: 'Technology', 
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: 'https://easygolive.com/' 
-  },
-  { 
-    id: 6, 
-    title: 'The Daily Grind Cafe', 
-    category: 'Local Business', 
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800&h=600', 
-    link: '#' 
-  },
-];
-
-// Structural placeholders for 'Others' (Long website screenshots / PDF files)
+// Full-page website screenshots for 'Others'
 const otherProjects: OtherProject[] = [
   {
     id: 'other-1',
-    title: 'Nova Cloud Platform — Full Architecture',
-    category: 'SaaS & Web App',
-    description: 'Comprehensive full-length homepage screenshot with interactive product tour, feature breakdown, and pricing tiers.',
-    previewImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800&h=1400',
-    longScreenshotImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200&h=3200',
+    title: 'Hamza Azhar — Realtor & Quant Portfolio',
+    category: 'Portfolio & Real Estate',
+    description: 'Dark executive portfolio for a Licensed Realtor & Quant Strategist featuring focus areas, searchable competencies, experience timeline, and consultation inquiry.',
+    image: '/assets/portfolio/hamza-azhar.webp',
+    width: 960,
+    height: 3777,
   },
   {
     id: 'other-2',
-    title: 'Aura Luxury Real Estate — Full Showcase',
-    category: 'Real Estate & Living',
-    description: 'Full-length architectural landing page with property walkthroughs, floorplan grids, and VIP inquiry module.',
-    previewImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800&h=1400',
-    longScreenshotImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200&h=3200',
+    title: 'Riwaj Shadi Hall — Banquet & Marquee',
+    category: 'Hospitality & Events',
+    description: 'Wedding banquet and marquee venue website in Abbottabad with catering highlights, event gallery, verified ratings, map integration, and online booking.',
+    image: '/assets/portfolio/riwaj-shadi-hall.webp',
+    width: 960,
+    height: 4975,
   },
   {
     id: 'other-3',
-    title: 'Kinetix Athletic Fitness — Complete Funnel',
-    category: 'Health & Fitness',
-    description: 'End-to-end conversion funnel page featuring trainer profiles, class timetables, and integrated checkout.',
-    previewImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800&h=1400',
-    longScreenshotImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1200&h=3200',
+    title: 'Jazan Building Contracting L.L.C',
+    category: 'Construction & Engineering',
+    description: 'UAE general contracting website featuring civil engineering capabilities, interactive cost and timeline estimator, verified Google reviews, and tender portal.',
+    image: '/assets/portfolio/jazan-building-uae.webp',
+    width: 960,
+    height: 5336,
   },
   {
     id: 'other-4',
-    title: 'Vanguard Global Consulting — Corporate Story',
-    category: 'Corporate & Finance',
-    description: 'Full-length annual corporate presentation page with data visualization, methodology, and leadership matrix.',
-    previewImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800&h=1400',
-    longScreenshotImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200&h=3200',
+    title: 'Cladium Cafe & Resort',
+    category: 'Hospitality & Dining',
+    description: 'Luxury forest-green mountain resort cafe website in Tarhana, Abbottabad showcasing culinary philosophy, guest testimonials, hours, and embedded maps.',
+    image: '/assets/portfolio/cladium-resort.webp',
+    width: 960,
+    height: 1597,
+  },
+  {
+    id: 'other-5',
+    title: 'Shazeb Pharmaceutical Industries',
+    category: 'Healthcare & Pharma',
+    description: 'Corporate pharmaceutical and IV fluid manufacturing showcase highlighting aseptic blow-fill-seal technology, 6-step process, product catalog, and callback requests.',
+    image: '/assets/portfolio/shazeb-pharma.webp',
+    width: 960,
+    height: 3271,
+  },
+  {
+    id: 'other-6',
+    title: 'Triple One Hotel Rooms',
+    category: 'Hospitality & Booking',
+    description: 'Boutique hospitality reservation website featuring direct WhatsApp booking calculator, signature room tiers, 15-photo property gallery, and traveler reviews.',
+    image: '/assets/portfolio/triple-one-hotel.webp',
+    width: 960,
+    height: 4353,
+  },
+  {
+    id: 'other-7',
+    title: 'Depilex Beauty Clinic Mianwali',
+    category: 'Beauty & Aesthetics',
+    description: 'Luxury salon and aesthetic dermatology website with tabbed service catalog, interactive 3-step beauty quiz, WhatsApp booking form, and FAQ accordion.',
+    image: '/assets/portfolio/depilex-mianwali.webp',
+    width: 960,
+    height: 4310,
+  },
+  {
+    id: 'other-8',
+    title: 'Prime Estate — Gulshan-e-Iqbal',
+    category: 'Real Estate & Property',
+    description: 'Real estate advisory portal for Karachi featuring filterable residential and commercial property segments, verified client reviews, and WhatsApp consultation.',
+    image: '/assets/portfolio/prime-estate-karachi.webp',
+    width: 960,
+    height: 3517,
+  },
+  {
+    id: 'other-9',
+    title: "Hyatt's Restaurant — Family Dining",
+    category: 'Hospitality & Dining',
+    description: 'Family dining website featuring signature Karahi & BBQ menu cards, chef story, 905+ verified customer reviews, and instant table reservation actions.',
+    image: '/assets/portfolio/hyatts-restaurant.webp',
+    width: 960,
+    height: 2148,
+  },
+  {
+    id: 'other-10',
+    title: 'My Skin Laser & Aesthetics',
+    category: 'Medical & Dermatology',
+    description: 'Medical dermatology and laser aesthetics clinic website for Dr. Tariq Mahmood Khan featuring board certifications, treatment filters, and appointment scheduling.',
+    image: '/assets/portfolio/dr-tariq-mehmood.webp',
+    width: 960,
+    height: 3695,
   },
 ];
 
@@ -256,23 +269,20 @@ const sampleProjects: SampleProject[] = [
 ];
 
 const Portfolio: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [activeFilter, setActiveFilter] = useState('Scrolling Images: Complete Layouts');
 
-  // Lightbox / Zoom modal state for 'Others' (Long Screenshots)
+  // Lightbox / Zoom modal state for 'Scrolling Images: Complete Layouts'
   const [selectedOther, setSelectedOther] = useState<OtherProject | null>(null);
   const [zoomLevel, setZoomLevel] = useState<number>(100);
 
-  // Gallery / Slider modal state for 'Samples' (Multi-Image 4x)
+  // Gallery / Slider modal state for 'Screenshots: Visual Concepts'
   const [selectedSample, setSelectedSample] = useState<SampleProject | null>(null);
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
-  // Categories list with 'Others' and 'Samples' placed immediately next to 'All'
-  const originalCategories = Array.from(new Set(projects.map(p => p.category)));
-  const categories = ['All', 'Others', 'Samples', ...originalCategories];
-
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === activeFilter);
+  const categories = [
+    'Scrolling Images: Complete Layouts',
+    'Screenshots: Visual Concepts',
+  ];
 
   // Body scroll locking and keyboard navigation for modals
   useEffect(() => {
@@ -334,7 +344,7 @@ const Portfolio: React.FC = () => {
             Take a look at some of the diverse WordPress projects I've delivered recently, ranging from healthcare and automotive events to complex e-commerce platforms.
           </p>
           
-          {/* Filter Bar with 'Others' and 'Samples' placed right next to 'All' */}
+          {/* Filter Bar */}
           <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3 mb-12 scrollbar-hide overflow-x-auto pb-2">
             {categories.map((cat) => {
               const isActive = activeFilter === cat;
@@ -356,8 +366,8 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
 
-        {/* 1. OTHERS SEGMENT VIEW (When 'Others' is active) */}
-        {activeFilter === 'Others' && (
+        {/* 1. SCROLLING IMAGES: COMPLETE LAYOUTS */}
+        {activeFilter === 'Scrolling Images: Complete Layouts' && (
           <div className="animate-in fade-in duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
               {otherProjects.map((item) => (
@@ -368,17 +378,20 @@ const Portfolio: React.FC = () => {
                 >
                   {/* Website Image Container - Crisp 100% Opacity with Visible Rounded Corners */}
                   <div className="relative h-[420px] rounded-2xl overflow-hidden bg-slate-950 border border-white/10 shadow-xl group-hover:border-sky-500/40 transition-colors">
-                    <div className="w-full transform transition-transform duration-[4500ms] ease-in-out group-hover:-translate-y-[calc(100%-420px)] pointer-events-none">
+                    <div className="w-full will-change-transform transition-transform duration-[5000ms] ease-in-out group-hover:-translate-y-[calc(100%-420px)] pointer-events-none">
                       <img
-                        src={item.previewImage}
+                        src={item.image}
                         alt={item.title}
-                        className="w-full h-auto object-cover opacity-100"
+                        width={item.width}
+                        height={item.height}
+                        className="w-full h-auto object-cover object-top opacity-100 block"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
 
                     {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <span className="bg-sky-600 hover:bg-sky-500 text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-xl flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-all">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -416,8 +429,8 @@ const Portfolio: React.FC = () => {
           </div>
         )}
 
-        {/* 2. SAMPLES SEGMENT VIEW (When 'Samples' is active) */}
-        {activeFilter === 'Samples' && (
+        {/* 2. SCREENSHOTS: VISUAL CONCEPTS */}
+        {activeFilter === 'Screenshots: Visual Concepts' && (
           <div className="animate-in fade-in duration-500">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
               {sampleProjects.map((sample) => (
@@ -433,6 +446,7 @@ const Portfolio: React.FC = () => {
                       alt={sample.title}
                       className="w-full h-full object-cover object-top opacity-100 transition-transform duration-500 group-hover:scale-102"
                       loading="lazy"
+                      decoding="async"
                     />
 
                     {/* Hover Overlay */}
@@ -474,53 +488,6 @@ const Portfolio: React.FC = () => {
           </div>
         )}
 
-        {/* 3. DEFAULT & CATEGORY VIEW (Preserves existing websites exactly as they are!) */}
-        {activeFilter !== 'Others' && activeFilter !== 'Samples' && (
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {filteredProjects.map((project) => (
-                <a 
-                  key={project.id} 
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative overflow-hidden rounded-3xl bg-slate-800 block transform transition-all duration-500 hover:-translate-y-2 animate-in fade-in zoom-in-95 duration-500"
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000"
-                    />
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-sky-600/0 group-hover:bg-sky-600/40 transition-all duration-500 flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 bg-white text-sky-600 px-6 py-2 rounded-full font-bold text-sm shadow-xl">
-                      View Live Site
-                    </span>
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent pointer-events-none"></div>
-                  
-                  <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full pointer-events-none">
-                    <div className="flex justify-between items-end">
-                      <div>
-                        <span className="text-sky-400 text-xs font-bold mb-1 block uppercase tracking-widest">{project.category}</span>
-                        <h3 className="text-xl md:text-2xl font-bold leading-tight">{project.title}</h3>
-                      </div>
-                      <div className="bg-white/10 p-2 rounded-full text-white/50 group-hover:text-white group-hover:bg-sky-500 transition-all">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* 4. FULL-SCREEN LIGHTBOX MODAL WITH ZOOM FUNCTIONALITY ('Others' Segment) */}
         {selectedOther && (
@@ -598,40 +565,21 @@ const Portfolio: React.FC = () => {
                     <p className="text-xs text-slate-400 mt-0.5">{selectedOther.description}</p>
                   </div>
                   <span className="text-[11px] font-bold text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20 whitespace-nowrap">
-                    Full-Length Screenshot Placeholder
+                    Full-Page Screenshot
                   </span>
                 </div>
 
-                {/* Long Form Vertical Preview */}
+                {/* Full-Page Vertical Screenshot Preview */}
                 <div className="bg-slate-950 flex flex-col items-center">
                   <img
-                    src={selectedOther.longScreenshotImage}
+                    src={selectedOther.image}
                     alt={selectedOther.title}
-                    className="w-full h-auto object-cover"
+                    width={selectedOther.width}
+                    height={selectedOther.height}
+                    className="w-full h-auto object-cover object-top block"
+                    loading="lazy"
+                    decoding="async"
                   />
-                  {/* Detailed structural mockup sections mimicking a full-page website */}
-                  <div className="w-full p-8 space-y-8 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-                    <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 text-center">
-                      <div className="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Section 1: Hero & Architecture</div>
-                      <div className="text-slate-300 font-medium text-sm">Responsive Header, Modern Typography, and Call to Action</div>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 text-center">
-                      <div className="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Section 2: Interactive Feature Showcase</div>
-                      <div className="text-slate-300 font-medium text-sm">Service Grids, Technology Stacks, and Interactive Cards</div>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 text-center">
-                      <div className="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Section 3: Social Proof & Metrics</div>
-                      <div className="text-slate-300 font-medium text-sm">Verified Client Testimonials, Conversion Numbers, and Ratings</div>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 text-center">
-                      <div className="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Section 4: Pricing Matrix & Booking Flow</div>
-                      <div className="text-slate-300 font-medium text-sm">Scalable Packages, Comparison Table, and Contact Gateway</div>
-                    </div>
-                    <div className="p-6 rounded-2xl bg-slate-800/80 border border-white/10 text-center">
-                      <div className="text-xs uppercase tracking-widest text-sky-400 font-bold mb-2">Section 5: Footer & Legal Credentials</div>
-                      <div className="text-slate-300 font-medium text-sm">Multi-column Navigation, Brand Credentials, and Newsletter Integration</div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -694,6 +642,8 @@ const Portfolio: React.FC = () => {
                   src={selectedSample.images[activeSlideIndex].url}
                   alt={selectedSample.images[activeSlideIndex].caption}
                   className="max-h-[64vh] w-auto max-w-full rounded-2xl shadow-2xl object-contain border border-white/10"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="mt-4 px-4 py-2 rounded-full bg-slate-900/90 border border-white/10 text-xs md:text-sm text-slate-200 font-semibold text-center shadow-lg">
                   {selectedSample.images[activeSlideIndex].caption}
@@ -731,6 +681,8 @@ const Portfolio: React.FC = () => {
                         src={img.url}
                         alt={img.caption}
                         className="w-full h-full object-cover object-top"
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-slate-900/20"></div>
                       <div className={`absolute bottom-0 inset-x-0 text-[10px] font-bold text-center py-0.5 ${

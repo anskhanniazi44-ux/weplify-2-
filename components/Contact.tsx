@@ -5,8 +5,9 @@ import { getWhatsAppLink } from '../constants.ts';
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
+    phone: '',
     email: '',
-    subject: 'Website Development',
+    subject: 'Website Design & Development',
     details: ''
   });
 
@@ -17,12 +18,28 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi Anas, my name is ${formData.name}. 
-Email: ${formData.email}
-Subject: ${formData.subject}
-Project Details: ${formData.details}`;
-    
-    window.open(getWhatsAppLink(message), '_blank', 'noopener,noreferrer');
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      return;
+    }
+
+    const lines = [
+      'Hi Anas, I would like to start a project with you.',
+      '',
+      `Name: ${formData.name.trim()}`,
+      `Phone / WhatsApp: ${formData.phone.trim()}`,
+      ...(formData.email.trim() ? [`Email: ${formData.email.trim()}`] : []),
+      `Service: ${formData.subject}`,
+      ...(formData.details.trim() ? [`Project Details: ${formData.details.trim()}`] : []),
+    ];
+
+    const whatsappUrl = getWhatsAppLink(lines.join('\n'));
+    const link = document.createElement('a');
+    link.href = whatsappUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -61,7 +78,9 @@ Project Details: ${formData.details}`;
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Your Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Your Name <span className="text-rose-500">*</span>
+                  </label>
                   <input 
                     type="text" 
                     name="name"
@@ -69,50 +88,73 @@ Project Details: ${formData.details}`;
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
-                    placeholder="Anas" 
+                    placeholder="Your full name" 
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Phone / WhatsApp Number <span className="text-rose-500">*</span>
+                  </label>
                   <input 
-                    type="email" 
-                    name="email"
+                    type="tel" 
+                    name="phone"
                     required
-                    value={formData.email}
+                    minLength={7}
+                    pattern="[+0-9\s()-]{7,20}"
+                    title="Please enter a valid phone or WhatsApp number (7-20 digits)"
+                    value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
-                    placeholder="anas@example.com" 
+                    placeholder="+92 300 1234567" 
                   />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
-                <select 
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none"
-                >
-                  <option>Elementor</option>
-                  <option>GeneratePress</option>
-                  <option>Speed Optimization</option>
-                  <option>Website Development</option>
-                </select>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Email Address
+                  </label>
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
+                    placeholder="you@example.com (optional)" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-2">
+                    Subject / Service
+                  </label>
+                  <select 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none bg-white"
+                  >
+                    <option value="Website Design & Development">Website Design &amp; Development</option>
+                    <option value="WordPress Design & Development">WordPress Design &amp; Development</option>
+                    <option value="Landing Pages & Website Redesign">Landing Pages &amp; Website Redesign</option>
+                    <option value="Speed, Hosting & Domain Setup">Speed, Hosting &amp; Domain Setup</option>
+                  </select>
+                </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Project Details</label>
+                <label className="block text-sm font-semibold text-slate-700 mb-2">
+                  Project Details
+                </label>
                 <textarea 
                   name="details"
-                  required
                   rows={4} 
                   value={formData.details}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 transition-all outline-none" 
-                  placeholder="Tell me about your requirements..."
+                  placeholder="Tell me about your requirements (optional)..."
                 ></textarea>
               </div>
               <button type="submit" className="w-full py-4 bg-sky-600 text-white rounded-xl font-bold text-lg hover:bg-sky-700 transition-all shadow-lg shadow-sky-500/20">
-                Send Message
+                Continue to WhatsApp
               </button>
             </form>
           </div>
